@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M365Insights</title>
+    <style>
+        /* Reset styles for body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Wallpaper background */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1f3a93, #4facfe);
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Animated geometric shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .shape.one {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.2);
+            top: 20%;
+            left: 10%;
+        }
+
+        .shape.two {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 70%;
+        }
+
+        .shape.three {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.15);
+            top: 80%;
+            left: 30%;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) translateX(0px);
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+        }
+
+        /* Navigation menu */
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(31, 58, 147, 0.9); /* Semi-transparent background */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .menu .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #4facfe;
+        }
+
+        /* Responsive menu for smaller screens */
+        @media (max-width: 768px) {
+            .menu ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                background: rgba(31, 58, 147, 0.95);
+                border-radius: 5px;
+                padding: 10px 20px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .menu ul.active {
+                display: flex;
+            }
+
+            .menu .toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu .toggle {
+                display: none;
+            }
+        }
+
+        /* Blog floating area */
+        .blog-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 70%;
+        }
+
+        .blog-area h2 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            color: #1f3a93;
+        }
+
+        .blog-area p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .blog-area::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .blog-area::-webkit-scrollbar-thumb {
+            background: #1f3a93;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <div class="menu">
+        <div class="logo">M365Insights</div>
+        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menuList">
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="licensing.htm">Licensing</a></li>
+            <li><a href="changelog.htm">Changelog</a></li>
+            <li><a href="insights.htm">Insights</a></li>
+        </ul>
+    </div>
+
+    <!-- Background container -->
+    <div class="background">
+        <!-- Animated shapes -->
+        <div class="shape one"></div>
+        <div class="shape two"></div>
+        <div class="shape three"></div>
+    </div>
+
+    <!-- Floating Blog Area -->
+    <div class="blog-area">
+        <h2>Welcome to Our Blog</h2>
+        <p>
+            Here you can write and share updates, insights, or tutorials for your audience.
+            This is your space to showcase your knowledge and build a connection with the community.
+        </
